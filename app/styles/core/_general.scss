@@ -1,0 +1,151 @@
+// General Styles
+html,
+body {
+  @include webfont(16px, $regular);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; // RB - fixes FF rendering webfonts bolder than other browsers
+  height: 100%;
+  background-color: $eir-white;
+  color: $eir-black;
+}
+
+a {
+  text-decoration: none;
+  color: $eir-blue-light;
+  &:hover {
+    color: $eir-blue-light;
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+}
+
+h1 {
+  @include webfont(36px, $bold);
+  letter-spacing: -0.5px;
+  @include breakpoint($bp-tablet) {
+    @include webfont(40px, $bold);
+  }
+  @include breakpoint($bp-desktop-and-up) {
+    @include webfont(46px, $bold);
+  }
+}
+
+h2 {
+  @include webfont(30px, $bold);
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  @include webfont(20px, $bold);
+  letter-spacing: -0.5px;
+  span {
+    @include webfont(14px, $bold);
+    display: block;
+    color: $eir-gray-dark;
+  }
+}
+
+p {
+  line-height: 130%;
+}
+
+ul, nav, {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+dl, dt, dd {
+  margin: 0;
+}
+
+button, select, textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  &:hover {
+    transition: background-color 0.5s ease-out;
+  }
+}
+
+.inner-page-global-contact {
+  padding: 0 0 0 0;
+}
+
+.page-container {
+  @include full-width;
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.clear {
+  @include clearfix;
+}
+
+.bold {
+  font-weight: $bold;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.center-xy{
+  @include align(both);
+}
+
+.center-y{
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 10%;
+}
+
+
+//Hiding select arrow in ie
+.mobile-hide {
+  display: none;
+}
+
+.mobile-show {
+  display: block;
+}
+
+
+// Tablet
+@include breakpoint($bp-tablet) {
+  .tablet-hide {
+    display: none;
+  }
+
+  .tablet-show {
+    display: block;
+  }
+
+  .inner-pages-global-container, .inner-page-global-contact {
+    padding: 60px 0 0 0;
+  }
+}
+
+
+// Desktop
+@include breakpoint($bp-desktop-and-up) {
+  .desktop-hide {
+    display: none;
+  }
+
+  .desktop-show {
+    display: block;
+  }
+
+  .inner-pages-global-container, .inner-page-global-contact {
+    padding: 60px 0 0 0;
+  }
+}
