@@ -1,153 +1,153 @@
 @mixin full-width {
-    width: 100%;
+  width: 100%;
 }
 
 @mixin min-width {
-    @include breakpoint($bp-large) {
-        max-width: 1492px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  @include breakpoint($bp-large) {
+    max-width: 1492px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 // Positioning
 @mixin center-x($width: "auto") {
-    position: absolute;
-    left: 50%;
+  position: absolute;
+  left: 50%;
 
-    // if width is unknown
-    @if $width == "auto" {
-        @include translateX(-50%);
-    }
+  // if width is unknown
+  @if $width == "auto" {
+      @include translateX(-50%);
+  }
 
-    // else
-    @if $width != "auto" {
-        width: $width;
-        margin-left: -($width / 2); // calculate offset
-    }
+  // else
+  @if $width != "auto" {
+      width: $width;
+      margin-left: -($width / 2); // calculate offset
+  }
 }
 
 @mixin center-y($height: "auto") {
-    position: absolute;
-    top: 50%;
+  position: absolute;
+  top: 50%;
 
-    // if height is unknown
-    @if $height == "auto" {
-        @include translateY(-50%);
-    }
+  // if height is unknown
+  @if $height == "auto" {
+      @include translateY(-50%);
+  }
 
-    // else
-    @if $height != "auto" {
-        height: $height;
-        margin-top: -($height / 2); // calculate offset
-    }
+  // else
+  @if $height != "auto" {
+      height: $height;
+      margin-top: -($height / 2); // calculate offset
+  }
 }
 
 @mixin center-xy() {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    @include transform(translateY(-50%) translateX(-50%));
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include transform(translateY(-50%) translateX(-50%));
 }
 
 // Fonts
 @mixin webfont($size: 16px, $weight: 300, $style: normal) {
-    font-family: $roboto;
-    font-size: $size;
-    font-style: $style;
-    font-weight: $weight;
+  font-family: $roboto;
+  font-size: $size;
+  font-style: $style;
+  font-weight: $weight;
 }
 
 // Form elements
 @mixin global-button($padding-t-b: 9px, $padding-l-r: 35px, $b-radius: 4px, $bg-color: $button-bg, $font-size: 14px, $color: $c-black-light) {
-    @include webfont($font-size, $regular);
-    cursor: pointer;
-    padding: $padding-t-b $padding-l-r;
-    color: $color;
-    border-radius: $b-radius;
-    background-color: $bg-color;
-    box-shadow: $button-bsh;
-    border: none;
+  @include webfont($font-size, $regular);
+  cursor: pointer;
+  padding: $padding-t-b $padding-l-r;
+  color: $color;
+  border-radius: $b-radius;
+  background-color: $bg-color;
+  box-shadow: $button-bsh;
+  border: none;
 }
 
 // Pseudo Graphics
 @mixin triangle($color: #000, $height: 1em, $width: 1em, $angle: 0) {
-    @if nth($angle, 1) == "top" or nth($angle, 1) == "bottom" {
-        $angle: "#{$angle}";
-    }
+  @if nth($angle, 1) == "top" or nth($angle, 1) == "bottom" {
+      $angle: "#{$angle}";
+  }
 
-    @if $angle == "top" {
-        $angle: 0;
-    }
-    @if $angle == "top right" {
-        $angle: 45 * 7;
-    }
-    @if $angle == "right" {
-        $angle: 45 * 2;
-    }
-    @if $angle == "bottom right" {
-        $angle: 45 * 1;
-    }
-    @if $angle == "bottom" {
-        $angle: 45 * 4;
-    }
-    @if $angle == "bottom left" {
-        $angle: 45 * 3;
-    }
-    @if $angle == "left" {
-        $angle: 45 * 6;
-    }
-    @if $angle == "top left" {
-        $angle: 45 * 5;
-    }
+  @if $angle == "top" {
+      $angle: 0;
+  }
+  @if $angle == "top right" {
+      $angle: 45 * 7;
+  }
+  @if $angle == "right" {
+      $angle: 45 * 2;
+  }
+  @if $angle == "bottom right" {
+      $angle: 45 * 1;
+  }
+  @if $angle == "bottom" {
+      $angle: 45 * 4;
+  }
+  @if $angle == "bottom left" {
+      $angle: 45 * 3;
+  }
+  @if $angle == "left" {
+      $angle: 45 * 6;
+  }
+  @if $angle == "top left" {
+      $angle: 45 * 5;
+  }
 
-    @if unit($height) == "" or unit($height) == "%" {
-        @debug "in triangle #{$height} is not a compatable unit for height.";
-    }
+  @if unit($height) == "" or unit($height) == "%" {
+      @debug "in triangle #{$height} is not a compatable unit for height.";
+  }
 
-    @if unit($width) == "" or unit($width) == "%" {
-        @debug "in triangle #{$width} is not a compatable unit for width.";
-    }
+  @if unit($width) == "" or unit($width) == "%" {
+      @debug "in triangle #{$width} is not a compatable unit for width.";
+  }
 
-    // offset 45deg to make each side start at 0
-    $deg: $angle + 45;
-    // if units, remove units
-    @if unit($deg) == deg {
-        $deg: $deg / 1deg;
-    }
-    // shift to be on a scale from 0 to 90.
-    @while $deg > 90 {
-        $deg: $deg - 90;
-    }
-    @while $deg < 0 {
-        $deg: $deg + 90;
-    }
-    // Get a ratio of 90 to multiply by.
-    $deg: $deg / 90;
+  // offset 45deg to make each side start at 0
+  $deg: $angle + 45;
+  // if units, remove units
+  @if unit($deg) == deg {
+      $deg: $deg / 1deg;
+  }
+  // shift to be on a scale from 0 to 90.
+  @while $deg > 90 {
+      $deg: $deg - 90;
+  }
+  @while $deg < 0 {
+      $deg: $deg + 90;
+  }
+  // Get a ratio of 90 to multiply by.
+  $deg: $deg / 90;
 
-    // make sure metrics are reset
-    display: block;
-    width: 0;
-    height: 0;
-    border: 0 solid transparent;
+  // make sure metrics are reset
+  display: block;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
 
-    // run through sides
-    @if $angle <= 45 or $angle > 315 {
-        border-bottom-color: $color;
-        border-width: 0 ($width * abs($deg - 1)) $height ($width * $deg);
-    }
-    @if $angle > 45 and $angle <= 135 {
-        border-left-color: $color;
-        border-width: ($height * $deg) 0 ($height * abs($deg - 1)) $width;
-    }
-    @if $angle > 135 and $angle <= 225 {
-        border-top-color: $color;
-        border-width: $height ($width * $deg) 0 ($width * abs($deg - 1));
-    }
-    @if $angle > 225 and $angle <= 315 {
-        border-right-color: $color;
-        border-width: ($height * abs($deg - 1)) $width ($height * $deg) 0;
-    }
+  // run through sides
+  @if $angle <= 45 or $angle > 315 {
+      border-bottom-color: $color;
+      border-width: 0 ($width * abs($deg - 1)) $height ($width * $deg);
+  }
+  @if $angle > 45 and $angle <= 135 {
+      border-left-color: $color;
+      border-width: ($height * $deg) 0 ($height * abs($deg - 1)) $width;
+  }
+  @if $angle > 135 and $angle <= 225 {
+      border-top-color: $color;
+      border-width: $height ($width * $deg) 0 ($width * abs($deg - 1));
+  }
+  @if $angle > 225 and $angle <= 315 {
+      border-right-color: $color;
+      border-width: ($height * abs($deg - 1)) $width ($height * $deg) 0;
+  }
 }
 
 // @mixin circle-element($width: 20px, $height: 20px, $bg-color: transparent, $b-radius: 20px) {
@@ -156,3 +156,12 @@
 //     height: $height;
 //     background-color: $bg-color;
 // }
+
+%main-menu-block-active {
+  position: absolute;
+  content: ' ';
+  width: 100%;
+  border-bottom: solid $c-gray 2px;
+  left: 0;
+  bottom: -0.5px;
+}
