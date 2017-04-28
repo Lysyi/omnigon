@@ -159,11 +159,13 @@
     &:before {
       position: absolute;
       content: ' ';
-      width: 12px;
-      height: 13px;
-      top: 5px;
+      width: 10px;
+      height: 5px;
+      top: 8px;
       left: -22px;
-      background-color: $c-green;
+      border-bottom: solid 1px $c-green;
+      border-left: solid 1px $c-green;
+      transform: rotate(-45deg);
     }
   }
 }
