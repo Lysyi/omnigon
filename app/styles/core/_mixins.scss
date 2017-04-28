@@ -3,6 +3,7 @@
 }
 
 @mixin min-width {
+  min-width: 1024px;
   @include breakpoint($bp-large) {
     max-width: 1492px;
     margin-left: auto;

@@ -145,6 +145,46 @@
   padding: 0 0 27px 48px;
   border-bottom: solid rgba($c-black, 0.1) 1px;
   line-height: 24px;
+  &__txt {
+    display: inline-block;
+    margin: 0 35px 0 0;
+  }
+}
+
+.slide-element {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  top: 2px;
+  border-radius: 100px;
+  background-color: rgba($c-black, 0.05);
+  label {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    top: -3px;
+    left: -4px;
+    border-radius: 100px;
+    background-color: $c-white;
+    box-shadow: 0 1px 2px 0 rgba($c-black, 0.2), 0 1px 4px 0 rgba($c-black, 0.1), 0 0 1px 0 rgba($c-black, 0.2);
+    transition: all 0.4s ease;
+    &:hover {
+      width: 30px;
+    }
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+    &:checked + label {
+      left: 20px;
+      box-shadow: 0 1px 2px 0 rgba($c-black, 0.2), 0 1px 4px 0 rgba($c-black, 0.1), 0 0 1px 0 rgba($c-black, 0.2);
+      &:hover {
+        box-shadow: 0 1px 2px 0 rgba($c-yellow, 0.6), 0 1px 4px 0 rgba($c-yellow, 0.6), 0 0 1px 0 rgba($c-yellow, 0.6);
+      }
+    }
+  }
 }
 
 .info-list-container {
