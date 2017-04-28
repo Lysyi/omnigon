@@ -6,29 +6,41 @@
 // Vars, Mixins, Etc.
 @import "core/all";
 
-.main-wrapper-container {
-  @include min-width;
-  display: flex;
-  flex-flow: row wrap;
-  height: 100vh;
+// page elements
+.hamburger-menu-container {
+  float: left;
+  position: relative;
+  cursor: pointer;
+  width: 18px;
+  height: 12px;
+  margin: 26px 19px 0 19px;
+  &__item {
+    display: block;
+    height: 2px;
+    background-color: $c-white;
+  }
+  &:before {
+    position: absolute;
+    content: ' ';
+    width: 100%;
+    height: 2px;
+    background-color: $c-white;
+    top: 50%;
+    margin-top: -1px;
+  }
+  &:after {
+    position: absolute;
+    content: ' ';
+    width: 100%;
+    height: 2px;
+    background-color: $c-white;
+    bottom: 0;
+  }
 }
-
-.main-aside-container {
-  width: 320px;
-  background-color: $c-gray;
-}
-
-.main-content-container {
-  flex: 1 0;
-  margin: 32px 32px 64px 32px;
-  border-radius: 8px;
-  background-color: $c-white-light;
-  box-shadow: 0 32px 64px 0 rgba(0, 0, 0, 0.05);
-}
-
 
 .main-logo {
   @include webfont(18px, $bold);
+  float: left;
   margin: 20px 0 20px 0;
   line-height: 1.33;
   letter-spacing: 0.5px;
@@ -42,18 +54,10 @@
 
 
 @include breakpoint($bp-middle) {
-  .main-aside-container {
-    width: 444px;
-  }
+
 }
 
 @include breakpoint($bp-large) {
-  .main-aside-container {
-    width: 508px;
-  }
 
-  .main-content-container {
-    margin-right: 0;
-  }
 }
 

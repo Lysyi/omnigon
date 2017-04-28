@@ -59,14 +59,15 @@
 }
 
 // Form elements
-@mixin global-button($padding-t-b: 18px, $padding-l-r: 18px, $b-radius: 3px, $bg-color: $eir-blue, $font-size: 16px, $border-color: #fff, $color: #fff) {
-    @include border-radius($b-radius);
+@mixin global-button($padding-t-b: 9px, $padding-l-r: 35px, $b-radius: 4px, $bg-color: $button-bg, $font-size: 14px, $color: $c-black-light) {
     @include webfont($font-size, $regular);
-    @include ps-line-height(20px);
+    cursor: pointer;
     padding: $padding-t-b $padding-l-r;
     color: $color;
-    border: 2px solid $border-color;
+    border-radius: $b-radius;
     background-color: $bg-color;
+    box-shadow: $button-bsh;
+    border: none;
 }
 
 // Pseudo Graphics

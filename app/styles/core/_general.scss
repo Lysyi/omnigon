@@ -33,7 +33,18 @@ button {
   }
 
   &:hover {
-    transition: background-color 0.5s ease-out;
+    transition: background-color 0.3s ease-out;
+    background-color: $c-yellow;
+  }
+}
+
+.button {
+  @include global-button($padding-t-b: 9px, $padding-l-r: 35px, $b-radius: 4px, $bg-color: $button-bg, $font-size: 14px, $color: $c-black-light);
+
+  &--vote {
+    clear: both;
+    display: block;
+    margin: 0 0 0 16px;
   }
 }
 
@@ -42,3 +53,42 @@ button {
 //   vertical-align: middle;
 //   padding: 0 10%;
 // }
+
+// main layot grid
+.main-wrapper-container {
+  @include min-width;
+  display: flex;
+  flex-flow: row wrap;
+  min-height: 100vh;
+}
+
+.main-aside-container {
+  width: 320px;
+  background-color: $c-gray;
+}
+
+.main-content-container {
+  flex: 1 0;
+  margin: 32px 32px 64px 32px;
+  border-radius: 8px;
+  background-color: $c-white-light;
+  box-shadow: 0 32px 64px 0 rgba(0, 0, 0, 0.05);
+}
+
+@include breakpoint($bp-middle) {
+  .main-aside-container {
+    width: 444px;
+  }
+}
+
+@include breakpoint($bp-large) {
+  .main-aside-container {
+    width: 508px;
+  }
+
+  .main-content-container {
+    margin-right: 0;
+  }
+}
+
+
