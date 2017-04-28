@@ -6,36 +6,54 @@
 // Vars, Mixins, Etc.
 @import "core/all";
 
-
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  @include webfont(14px, $regular);
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
+.main-wrapper-container {
+  @include min-width;
+  display: flex;
+  flex-flow: row wrap;
+  height: 100vh;
 }
 
-@include breakpoint($bp-tablet) {
-  .hero-unit {
-    background-color: blue;
-  }
+.main-aside-container {
+  width: 320px;
+  background-color: $c-gray;
+}
+
+.main-content-container {
+  flex: 1 0;
+  margin: 32px 32px 64px 32px;
+  border-radius: 8px;
+  background-color: $c-white-light;
+  box-shadow: 0 32px 64px 0 rgba(0, 0, 0, 0.05);
 }
 
 
-.test-0 {
+.main-logo {
   @include webfont(18px, $bold);
-  width: 420px;
-  height: 24px;
-  // font-family: Roboto;
-  // font-size: 18px;
-  // font-weight: bold;
+  margin: 20px 0 20px 0;
   line-height: 1.33;
   letter-spacing: 0.5px;
-  color: black;
+  a {
+    color: $c-white;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
+
+
+@include breakpoint($bp-middle) {
+  .main-aside-container {
+    width: 444px;
+  }
+}
+
+@include breakpoint($bp-large) {
+  .main-aside-container {
+    width: 508px;
+  }
+
+  .main-content-container {
+    margin-right: 0;
+  }
+}
+

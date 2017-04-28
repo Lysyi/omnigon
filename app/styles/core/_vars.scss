@@ -1,35 +1,8 @@
 //------------------------------------
-//    VARS.SCSS
-//------------------------------------
-
-//------------------------------------
 //    BREAKPOINTS
 //------------------------------------
-// @768
-// 9 columns
-// max width: 729
-// column width: 65
-// gutter: 18px
-
-// @1024
-// 12 columns
-// max width: 978
-// column width: 65
-// gutter: 18px
-
-// @1280
-// 12 columns
-// max width: 1171
-// column width: 82
-// gutter: 18px
-
-$bp-tablet:                800px 1139px;              // 800 - 1139
-$bp-tablet-and-desktop:    800px 1279px;              // 800px - 1279
-$bp-desktop:               1140px 1279px;             // 1140 - 1279
-$bp-desktop-and-up:        1140px;                    // 1140 - ∞
-$bp-desktop-large:         1280px;                    // 1280 - ∞
-$bp-retina:                min-resolution 1.5dppx;    // retina screens
-$bp-form:                  873px 768px;
+$bp-middle:                1396px 1659px;
+$bp-large:                 1660px;
 
 //------------------------------------
 //    FONTS
@@ -38,28 +11,26 @@ $roboto:     "Roboto", Times, "Trebuchet MS", Ubuntu, serif;
 $regular:    400;
 $medium:     500;
 $bold:       700;
-$italic:     italic;
 
 //------------------------------------
 //    COLORS
 //------------------------------------
-// Common Colors
-$eir-white: #ffffff;
-$eir-black: #000000;
-$eir-yellow: #f99e1b;
-$eir-blue: #003559;
-$eir-blue-light: #054770;
-$eir-blue-dark: #061d27;
-$eir-green: #93a33a;
+$c-white: #ffffff;
+$c-black: #000000;
 
-$eir-gray: rgba($eir-black, 0.2);
-$eir-gray-light: rgba($eir-black, 0.1);
-$eir-gray-dark: rgba($eir-black, 0.6);
-$eir-gray-normal: #e0e0e0;
+$c-white-light: rgba($c-white, 0.9);
+$c-black-light: rgba($c-black, 0.9);
 
-// Outline color on focus
-$default-text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+$c-yellow: #ffd840;
+$c-green: #26bf8c;
 
-//------------------------------------
-//    EXTRAS
-//------------------------------------
+$c-gray: #303030;
+
+$c-gray-light:  rgba(0, 0, 0, 0.05);
+$c-gray-dark: rgba(0, 0, 0, 0.1);
+
+// $main-bsh:    0 32px 64px 0 rgba(0, 0, 0, 0.05);
+$element-bsh: 0 0 1px 0 rgba(0, 0, 0, 0.4);
+
+$button-bsh: 0 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+$button-bg:         rgba(255, 255, 255, 0.95);
