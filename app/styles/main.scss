@@ -42,12 +42,65 @@
   @include webfont(18px, $bold);
   float: left;
   margin: 20px 0 20px 0;
-  line-height: 1.33;
+  line-height: 24px;
   letter-spacing: 0.5px;
   a {
     color: $c-white;
     &:hover {
       text-decoration: none;
+    }
+  }
+}
+
+.vote-list-container {
+  &__title {
+    @include webfont(12px, $medium);
+    padding: 12px 0 12px 16px;
+    border-top: solid rgba($c-white, 0.2) 1px;
+    line-height: 24px;
+    color: $c-white-light;
+  }
+}
+
+.vote-list-block {
+  padding: 0 0 12px 0;
+  &__item {
+    &__link {
+      @include webfont(14px, $regular);
+      display: flex;
+      align-items: center;
+      padding: 12px 16px 12px 16px;
+      text-decoration: none;
+      line-height: 24px;
+      color: $c-white;
+
+      &--active {
+        @include webfont(14px, $bold);
+        background-color: $c-yellow;
+        color: $c-gray;
+      }
+
+      &:hover {
+        background-color: $c-yellow;
+        color: $c-gray;
+        text-decoration: none;
+      }
+    }
+
+    &__img {
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+      margin: 0 16px 0 0;
+      border-radius: 100px;
+      &--noimage {
+        background-color: rgba($c-white, 0.6);
+      }
+    }
+
+    &__txt {
+      flex: 1;
+      display: inline-flex;
     }
   }
 }

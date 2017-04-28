@@ -150,9 +150,9 @@
     }
 }
 
-@mixin circle-element($width: 20px, $height: 20px, $bg-color: transparent, $b-radius: 20px) {
-    @include border-radius($b-radius);
-    width: $width;
-    height: $height;
-    background-color: $bg-color;
-}
+// @mixin circle-element($width: 20px, $height: 20px, $bg-color: transparent, $b-radius: 20px) {
+//     @include border-radius($b-radius);
+//     width: $width;
+//     height: $height;
+//     background-color: $bg-color;
+// }
