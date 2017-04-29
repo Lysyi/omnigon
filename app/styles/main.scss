@@ -159,7 +159,8 @@
   top: 2px;
   border-radius: 100px;
   background-color: rgba($c-black, 0.05);
-  label {
+  .slide-element__label {
+    z-index: 200;
     display: block;
     position: absolute;
     cursor: pointer;
@@ -175,13 +176,13 @@
       width: 30px;
     }
   }
-  input[type=checkbox] {
+  .slide-element__input {
     visibility: hidden;
     &:checked + label {
       left: 20px;
       box-shadow: 0 1px 2px 0 rgba($c-black, 0.2), 0 1px 4px 0 rgba($c-black, 0.1), 0 0 1px 0 rgba($c-black, 0.2);
       &:hover {
-        box-shadow: 0 1px 2px 0 rgba($c-yellow, 0.6), 0 1px 4px 0 rgba($c-yellow, 0.6), 0 0 1px 0 rgba($c-yellow, 0.6);
+        box-shadow: 0 0px 8px 0 rgba($c-yellow, 0.6), 0 0px 6px 0 rgba($c-yellow, 0.6), 0 0 1px 0 rgba($c-yellow, 0.6);
       }
     }
   }
